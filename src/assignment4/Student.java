@@ -67,8 +67,8 @@ public class Student
         if(!(multiplier == 1.08 || multiplier == 1.06 || multiplier == 1.08 * 1.06)){
             return false;
         }
-
-        return setMultiplier(multiplier);
+        this.multiplier = multiplier;
+        return true;
     }
 
 
@@ -79,7 +79,7 @@ public class Student
     public double getComputedGrade()
     {
         //TODO Delete line below, and implement this method
-        return getGrade()*getMultiplier();
+        return grade*multiplier;
     }
 
 
@@ -95,7 +95,7 @@ public class Student
     {
         //TODO Delete line below, and implement this method
         if(grade == -3 || grade == 0 || grade == 2 || grade == 4 || grade == 7 || grade == 10 || grade == 12){
-            setGrade(grade);
+            this.grade = grade;
             return true;
         }
         else
@@ -109,7 +109,7 @@ public class Student
     public int getGrade()
     {
         //TODO Delete line below, and implement this method
-        return getGrade();
+        return grade;
     }
 
 
@@ -120,7 +120,7 @@ public class Student
     public String getName()
     {
         //TODO Delete line below, and implement this method
-        return getName();
+        return name;
     }
 
 
@@ -136,6 +136,20 @@ public class Student
     public boolean setName(String name)
     {
         //TODO Delete line below, and implement this method
+        if (name == null || name.isEmpty()) {
+            return false;
+        }
+
+        if (name.matches(".*[.\\/,(\\)&%€#!$].*")) {
+            return false;
+        }
+
+        String[] nameParts = name.split("\\s+");
+        if (nameParts.length < 2) {
+            return false;
+        }
+
+        this.name = name;
         return true;
     }
 
@@ -147,7 +161,7 @@ public class Student
     public int getStudentId()
     {
         //TODO Delete line below, and implement this method
-        return getStudentId();
+        return studentId;
     }
 
 
@@ -161,11 +175,11 @@ public class Student
     public boolean setStudentId(int studentId)
     {
         //TODO Delete line below, and implement this method
-        if(!(studentId > -1)){
+        if (studentId < 0) {
             return false;
         }
-        else
-        setStudentId(studentId);
+
+        this.studentId = studentId;
         return true;
     }
 
