@@ -34,7 +34,10 @@ public class Student
     public Student(int studentId, String name)
     {
         //TODO Delete line below, and implement this method
-        throw new UnsupportedOperationException();
+        setGrade(0);
+        setMultiplier(1.06);
+        setName(name);
+        setStudentId(studentId);
     }
 
 
@@ -45,7 +48,7 @@ public class Student
     public double getMultiplier()
     {
         //TODO Delete line below, and implement this method
-        throw new UnsupportedOperationException();
+        return multiplier;
     }
 
 
@@ -61,7 +64,11 @@ public class Student
     public boolean setMultiplier(double multiplier)
     {
         //TODO Delete line below, and implement this method
-        throw new UnsupportedOperationException();
+        if(!(multiplier == 1.08 || multiplier == 1.06 || multiplier == 1.08 * 1.06)){
+            return false;
+        }
+
+        return setMultiplier(multiplier);
     }
 
 
@@ -72,7 +79,7 @@ public class Student
     public double getComputedGrade()
     {
         //TODO Delete line below, and implement this method
-        throw new UnsupportedOperationException();
+        return getGrade()*getMultiplier();
     }
 
 
@@ -87,7 +94,12 @@ public class Student
     public boolean setGrade(int grade)
     {
         //TODO Delete line below, and implement this method
-        throw new UnsupportedOperationException();
+        if(grade == -3 || grade == 0 || grade == 2 || grade == 4 || grade == 7 || grade == 10 || grade == 12){
+            setGrade(grade);
+            return true;
+        }
+        else
+            return false;
     }
 
     /**
@@ -97,7 +109,7 @@ public class Student
     public int getGrade()
     {
         //TODO Delete line below, and implement this method
-        throw new UnsupportedOperationException();
+        return getGrade();
     }
 
 
@@ -108,7 +120,7 @@ public class Student
     public String getName()
     {
         //TODO Delete line below, and implement this method
-        throw new UnsupportedOperationException();
+        return getName();
     }
 
 
@@ -124,7 +136,7 @@ public class Student
     public boolean setName(String name)
     {
         //TODO Delete line below, and implement this method
-        throw new UnsupportedOperationException();
+        return true;
     }
 
 
@@ -135,7 +147,7 @@ public class Student
     public int getStudentId()
     {
         //TODO Delete line below, and implement this method
-        throw new UnsupportedOperationException();
+        return getStudentId();
     }
 
 
@@ -149,7 +161,12 @@ public class Student
     public boolean setStudentId(int studentId)
     {
         //TODO Delete line below, and implement this method
-        throw new UnsupportedOperationException();
+        if(!(studentId > -1)){
+            return false;
+        }
+        else
+        setStudentId(studentId);
+        return true;
     }
 
 }

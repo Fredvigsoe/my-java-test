@@ -1,5 +1,7 @@
 package assignment1;
 
+import java.util.stream.IntStream;
+
 public class LogicsAndNumbersStuff {
 
     /**
@@ -12,7 +14,8 @@ public class LogicsAndNumbersStuff {
     public int diffMultipliedByC(int a, int b, int c)
     {
         //TODO Delete line below, and implement this method
-        throw new UnsupportedOperationException();
+        int numToReturn = (a * c) - (b * c);
+        return numToReturn;
     }
 
     /**
@@ -24,7 +27,12 @@ public class LogicsAndNumbersStuff {
     public boolean canYouStayInBed(boolean weekday, boolean vacation)
     {
         //TODO Delete line below, and implement this method
-        throw new UnsupportedOperationException();
+        if (weekday == true && (vacation == true) || (weekday == false) && (vacation == true) || (weekday == false) && (vacation == false)){
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     /**
@@ -35,7 +43,8 @@ public class LogicsAndNumbersStuff {
     public int sumOfNumbers(int[] numbers)
     {
         //TODO Delete line below, and implement this method
-        throw new UnsupportedOperationException();
+        int sum = IntStream.of(numbers).sum();
+        return sum;
     }
 
     /**
@@ -46,7 +55,8 @@ public class LogicsAndNumbersStuff {
     public double averageOfNumber(int[] numbers)
     {
         //TODO Delete line below, and implement this method
-        throw new UnsupportedOperationException();
+        int sum = IntStream.of(numbers).sum();
+        return sum / numbers.length;
     }
 
     /**
@@ -60,7 +70,22 @@ public class LogicsAndNumbersStuff {
     public int numberWithMostOccurrences(int[] numbers)
     {
         //TODO Delete line below, and implement this method
-        throw new UnsupportedOperationException();
+        int maxcount = 0;
+        int numtoReturn = 0;
+        for (int i = 0; i < numbers.length; i++) {
+            int count = 0;
+            for (int j = 0; j < numbers.length; j++) {
+                if (numbers[i] == numbers[j])
+                    count++;
+            }
+            if (count > maxcount) {
+                maxcount = count;
+                numtoReturn = numbers[i];
+            }
+        }
+
+
+        return numtoReturn;
     }
 
 }

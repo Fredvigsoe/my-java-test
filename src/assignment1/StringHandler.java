@@ -10,7 +10,7 @@ public class StringHandler {
      */
     public String stringManipulation(String str) {
         //TODO Delete line below, and implement this method
-        throw new UnsupportedOperationException();
+        return str.replace("c", "s");
     }
 
     /**
@@ -22,7 +22,11 @@ public class StringHandler {
      */
     public int stringLength(String str) {
         //TODO Delete line below, and implement this method
-        throw new UnsupportedOperationException();
+        if((str == "" || str == null)){
+            return 0;
+        }
+        else
+            return str.length();
     }
 
     /**
@@ -33,7 +37,11 @@ public class StringHandler {
      */
     public int stringArrayLength(String[] arr) {
         //TODO Delete line below, and implement this method
-        throw new UnsupportedOperationException();
+            int counter = 0;
+        for (int i = 0; i < arr.length; i++) {
+            counter += arr[i].length();
+        }
+        return counter;
     }
 
     /**
@@ -44,7 +52,9 @@ public class StringHandler {
      */
     public String stringReverse(String str) {
         //TODO Delete line below, and implement this method
-        throw new UnsupportedOperationException();
+        StringBuilder sb = new StringBuilder(str);
+        sb.reverse();
+        return sb.toString();
     }
 
     /**
@@ -57,7 +67,14 @@ public class StringHandler {
      */
     public int charCount(String str, char c) {
         //TODO Delete line below, and implement this method
-        throw new UnsupportedOperationException();
+        int count = 0;
+        String lower = str.toLowerCase();
+        for (int i = 0; i < str.length(); i++) {
+            if(lower.charAt(i) == c){
+                count++;
+            }
+        }
+        return count;
     }
 
     /**
@@ -70,8 +87,14 @@ public class StringHandler {
      */
     public String stringOfChars(int amount, char c) {
         //TODO Delete line below, and implement this method
-        throw new UnsupportedOperationException();
-    }
+            StringBuilder sb = new StringBuilder(amount);
+            for (int i = 0; i < amount; i++) {
+            sb.append(c);
+        }
+            return sb.toString();
+        }
+
+
 
 
 }

@@ -1,6 +1,8 @@
 package assignment3;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class Team {
    private ArrayList<TeamMember> members = new ArrayList<>();
@@ -12,7 +14,7 @@ public class Team {
      */
     public void addTeamMember(TeamMember m) {
         //TODO Delete line below, and implement this method
-        throw new UnsupportedOperationException();
+        members.add(m);
     }
     
     // Nothing to do here!
@@ -32,7 +34,7 @@ public class Team {
      */
     public boolean removeTeamMember(TeamMember m){
         //TODO Delete line below, and implement this method
-        throw new UnsupportedOperationException();
+        return members.remove(m);
     }
 
     /**
@@ -57,7 +59,7 @@ public class Team {
      */
     public ArrayList<TeamMember> retriveMembersByRole(String role) {
         //TODO Delete line below, and implement this method
-        throw new UnsupportedOperationException();
+        return members;
     }
 
     /**
@@ -66,7 +68,7 @@ public class Team {
      */
     public void sortByNameAsc() {
         //TODO Delete line below, and implement this method
-        throw new UnsupportedOperationException();
+
     }
 
     /**

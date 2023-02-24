@@ -1,5 +1,7 @@
 package assignment2;
 
+import java.util.Random;
+
 public class FlipCoin {
 
     /**
@@ -9,6 +11,10 @@ public class FlipCoin {
      */
     public int flipCoin() {
         //TODO Delete line below, and implement this method
-        throw new UnsupportedOperationException();
+        Random random = new Random();
+        int test = 2;
+        int randomNum = random.nextInt(test);
+        return randomNum;
+
     }
 }
